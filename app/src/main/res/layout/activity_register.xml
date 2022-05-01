@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Nama    : Fauzan Muhammad Abdussalam
+NIM     : 10119901
+Kelas   : IF-10K
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/img_header"
+        android:contentDescription="image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintTop_toBottomOf="@id/img_header"/>
+
+    <ImageView
+        android:id="@+id/icon_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="image"
+        android:padding="@dimen/dimen_16"
+        android:src="@drawable/ic_header_back"
+        android:clickable="true"
+        android:onClick="toLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="image"
+        android:padding="@dimen/dimen_16"
+        android:text="@string/txt_register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_dimen_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shadow">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Username"
+            android:paddingBottom="@dimen/dimen_16"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Email"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Phone Number"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/phone_number">
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Male"
+                android:textColor="@color/grey" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Female"
+                android:textColor="@color/grey" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/blood_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:drawableRight="@drawable/ic_register_dropdown"
+            android:hint="Blood Type"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/reshus"
+            app:layout_constraintTop_toBottomOf="@id/gender" />
+
+        <EditText
+            android:id="@+id/reshus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:drawableRight="@drawable/ic_register_dropdown"
+            android:hint="Reshus"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/blood_type"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gender" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Password"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/blood_type" />
+
+        <EditText
+            android:id="@+id/retype_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Retype Password"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/user_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/retype_password">
+
+            <RadioButton
+                android:id="@+id/personal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Personal"
+                android:textColor="@color/grey" />
+
+            <RadioButton
+                android:id="@+id/organization"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Organization"
+                android:textColor="@color/grey" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/job"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:drawableRight="@drawable/ic_register_dropdown"
+            android:hint="Job"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_type" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:hint="Home Address"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/job" />
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shadow_header"
+            android:drawableRight="@drawable/ic_blood_needed_location"
+            android:hint="Default Location"
+            android:paddingBottom="@dimen/dimen_16"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/txt_dimen_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <CheckBox
+            android:id="@+id/terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/terms"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/location" />
+
+        <Button
+            android:id="@+id/btn_connect_fb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_bg_bordered_button"
+            android:text="@string/txt_register"
+            android:textColor="@color/light_blue"
+            app:backgroundTint="@color/light_blue"
+            android:onClick="toAlmostThere"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/terms" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
